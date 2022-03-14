@@ -11,7 +11,7 @@ With npm
 
 With yarn
 ```
-  yarn add -g script-language
+  yarn global add script-language
 ```
 
 ## Usage
