@@ -1,0 +1,20 @@
+{
+  "name": "script-language",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:khacywin/w-component.git"
+  },
+  "keywords": [
+    "cli",
+    "language"
+  ],
+  "author": "khacy",
+  "scripts": {
+    "test": "test"
+  },
+  "bin": {
+    "script-language": "./bin/index.js"
+  }
+}
