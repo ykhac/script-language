@@ -1,19 +1,19 @@
 {
   "name": "script-language",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "bin/index.js",
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:khacywin/w-component.git"
+    "url": "git+git@github.com:khacywin/script-language.git"
   },
   "keywords": [
     "cli",
-    "language"
+    "language",
+    "generate json",
+    "json language",
+    "multiple language"
   ],
   "author": "khacy",
-  "scripts": {
-    "test": "test"
-  },
   "bin": {
     "script-language": "./bin/index.js"
   }
