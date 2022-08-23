@@ -1,43 +1,55 @@
 # script-language
 
 This is CLI command.<br/>
-It will generate text which around by any function to object.
+The `script-language` will generate text which around by any function to object.
 
 ## Install
+
 With npm
+
 ```
   npm install -g script-language
 ```
 
 With yarn
+
 ```
   yarn global add script-language
 ```
 
 ## Usage
+
 Run script in your code folder
+
 ```
   script-language
 ```
 
-## Config
+## CLI command
 
-| Properties | Type | Description | Default
-| --------------------- | -------------------- | -------------------- | -------------------- |
-| **excludes** | array | Folder will be ignored | ["node_modules"] |
-| **includes** | array | Folder will be run | ["src"] |
-| **match** | string | File match | \^.*.(js\|ts\|jsx\|tsx)$ |
-| **nameFunction** | string | Name of function contain text will be generated | "_t" |
-| **pathJson** | string | Path and name of file will be generated | "./language.json" |
-| **language** | array | List language | ["vi-VI", "en-EN"] |
+| Flag         | Type   | Description                              |
+| ------------ | ------ | ---------------------------------------- |
+| **--outDir** | string | Path of folder consist will be generated |
+
+## File language.config.json
+
+| Properties       | Type               | Description                                     | Default                   |
+| ---------------- | ------------------ | ----------------------------------------------- | ------------------------- |
+| **excludes**     | array              | Folder will be ignored                          | ["node_modules"]          |
+| **includes**     | array              | Folder will be run                              | ["src"]                   |
+| **match**        | string             | File match                                      | \^.\*.(js\|ts\|jsx\|tsx)$ |
+| **nameFunction** | string \| string[] | Name of function contain text will be generated | "\_t"                     |
+| **outDir**       | string             | Path of folder consist will be generated        | "./language"              |
+| **language**     | array              | List language                                   | ["vi-VI", "en-EN"]        |
 
 ## Example
+
 ```
   ...
   <div>{ _t("Sessions is expired.") }</div>
 
   ...
-  <a>{_t("Sign in")}</a>  
+  <a>{_t("Sign in")}</a>
 
 
   ...
@@ -49,24 +61,24 @@ Run script in your code folder
 
 <br />
 
-`language.json`
+`language/vi.json`
+
 ```
   {
-    "Sessions is expired.": {
-        "vi": "Sessions is expired.",
-        "en": "Sessions is expired."
-    },
-    "Sign in": {
-        "vi": "Sign in",
-        "en": "Sign in"
-    },
-    "You can reset password": {
-        "vi": "You can reset password",
-        "en": "You can reset password"
-    },
-    "Send": {
-        "vi": "Send",
-        "en": "Send"
-    }
+    "Sessions is expired.": "Sessions is expired.",
+    "Sign in":"Sign in",
+    "You can reset password": "You can reset password",
+    "Send": "Send",
+  }
+```
+
+`language/en.json`
+
+```
+  {
+    "Sessions is expired.": "Sessions is expired.",
+    "Sign in":"Sign in",
+    "You can reset password": "You can reset password",
+    "Send": "Send",
   }
 ```

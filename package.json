@@ -1,20 +1,28 @@
 {
   "name": "script-language",
-  "version": "1.0.1",
-  "main": "bin/index.js",
+  "version": "1.1.0",
+  "main": "dish/index.js",
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:khacywin/script-language.git"
+    "url": "git+git@github.com:ykhac/script-language.git"
+  },
+  "scripts": {
+    "build": "./build.js",
+    "dev": "./dev.js",
+    "preinstall": "./build.js"
   },
   "keywords": [
     "cli",
     "language",
-    "generate json",
-    "json language",
+    "generate",
     "multiple language"
   ],
-  "author": "khacy",
+  "author": "ykhac",
   "bin": {
     "script-language": "./bin/index.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.5",
+    "typescript": "^4.7.4"
   }
 }

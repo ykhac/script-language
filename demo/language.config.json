@@ -1,0 +1,8 @@
+{
+  "excludes": ["node_modules"],
+  "match": "^.*.(js|ts|jsx|tsx)$",
+  "nameFunction": ["_t", "lang"],
+  "outDir": "./language",
+  "includes": "",
+  "language": ["vi-VI", "en-EN", "au-AU"]
+}
