@@ -8,26 +8,27 @@ const defaultConfig = {
   excludes: ["node_modules"],
   match: "^.*.(js|ts|jsx|tsx)$",
   nameFunction: "_t",
-  pathJson: "./language.json",
+  outDir: "./language",
   includes: ["src"],
   language: ["vi-VI", "en-EN"],
 };
 
 module.exports = function () {
   const pathConfig = path.resolve(folderRootPath, "language.config.json");
+  const argv = require("./handleArgv")();
 
   if (!fs.existsSync(pathConfig)) return defaultConfig;
 
-  const data = JSON.parse(
+  const config = JSON.parse(
     fs.readFileSync(
       path.resolve(folderRootPath, "./language.config.json"),
       "utf8"
     )
   );
 
-  if (typeof data.includes === "string") {
-    data.includes = [data.includes];
+  if (typeof config.includes === "string") {
+    config.includes = [config.includes];
   }
 
-  return { ...defaultConfig, ...data };
+  return { ...defaultConfig, ...config, ...argv };
 };
